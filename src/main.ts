@@ -24,6 +24,7 @@ function pressS(e: KeyboardEvent) {
     sCounter += 1;
 
     displayS && (displayS.textContent = `${sCounter}`);
+    sKey?.classList.toggle("shadow-s");
   }
 }
 function pressK(e: KeyboardEvent) {
@@ -31,9 +32,7 @@ function pressK(e: KeyboardEvent) {
     kCounter += 1;
 
     displayK && (displayK.textContent = `${kCounter}`);
-    kKey?.classList.toggle("box-shadow");
-
-    // kKey && (kKey.style.boxShadow = "1px 1px 0px 25px rgba(255,216,22,0.28)");
+    kKey?.classList.toggle("shadow-k");
   }
 }
 
@@ -52,6 +51,10 @@ const startGame = (delay: string | undefined) => {
     clearInterval(interval);
     window.removeEventListener("keypress", pressS);
     window.removeEventListener("keypress", pressK);
+
+    // remove box shadow
+    kKey?.classList.remove("shadow-k");
+    sKey?.classList.remove("shadow-s");
 
     // STYLE AND DISPLAY WINNER
     if (sCounter > kCounter) {
