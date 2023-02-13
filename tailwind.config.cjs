@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         NotoSans: "'Noto Sans Syloti Nagri', sans-serif",
       },
+      boxShadow: {
+        k: "1px 1px 0px 25px rgba(255,216,22,0.28)",
+      },
     },
   },
   plugins: [],
